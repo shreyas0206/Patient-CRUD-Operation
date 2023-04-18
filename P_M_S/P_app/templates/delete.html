@@ -1,0 +1,24 @@
+{% extends 'index.html' %}
+{% block 'title' %}
+Delete Patient Details
+{% endblock %}
+{% block 'content' %}
+    
+<div class="container">
+    <div >
+      <div class="row justify-content-around">
+        
+        <form action="" method ='post' class="col-sm-4 mt-5 p-3 bg-white rounded">
+            {% csrf_token %}
+            <h3 class='text-center'>Delete Patient Details</h3>
+            <br>
+            <h4>Do You Want To Delete Patient Details ?</h4>
+
+          <button type="submit" class="btn btn-primary">Delete</button>
+          <a class="btn btn-danger" href="/AllPatient/">Cancel</a>          
+        </form>    
+            </div>
+    </div>
+</div>
+
+{% endblock %}
