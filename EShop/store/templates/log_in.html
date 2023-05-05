@@ -1,0 +1,38 @@
+{% extends 'index.html' %}
+{% block 'title' %}
+LOG-IN
+{% endblock %}
+
+{% block 'heading' %}
+LOG-IN FORM
+{% endblock %}
+{% block 'content' %}
+<div class="row justify-content-around">
+    <div class="col-sm-4">
+        
+        <form action="" method ='post' class="bg-whitecol-sm-4 p-3 bg-dark rounded text-white mt-5">
+            <h3 class="text-white text-center">Log-In</h3>
+        {% csrf_token %}
+            {% for fm in form%}
+                {{fm.label_tag}}
+                {{fm}}
+                <small class="text-danger">{{fm.errors}}</small>
+            {% endfor %}
+            <br>
+            <!-- <ul class="d-inline"> -->
+            <center>
+                <b>
+                <div class="d-flex align-items-center flex-column">
+                <input type="submit" class="btn btn-outline-primary mt-3 col-sm-6 mb-2" value=' LOG IN '>
+                </div>
+                <div class="d-flex align-items-center flex-column">
+                    <p class="mb-0 me-2">Don't have an account?</p>
+                    <a class="mt-2 btn btn-outline-danger mt-3 col-sm-6" href="/signup/">SIGN UP</a>                
+                </div>                
+                </b>
+            </center>
+            <!-- </ul>         -->
+        </form>
+    </div>
+</div>
+{% endblock %}
